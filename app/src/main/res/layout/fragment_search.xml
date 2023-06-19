@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.SearchView
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/search"
+        android:layout_marginTop="10dp"
+        app:iconifiedByDefault="false"
+        app:queryHint="Nhap mon tieu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+    
+    <EditText
+        android:id="@+id/eFrom"
+        android:layout_marginTop="10dp"
+        android:hint="Chon ngay bat dau"
+        app:layout_constraintTop_toBottomOf="@id/search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+    <EditText
+        android:id="@+id/eTo"
+        android:layout_marginTop="10dp"
+        android:hint="Chon ngay ket thuc"
+        app:layout_constraintTop_toBottomOf="@id/eFrom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+    <LinearLayout
+        android:id="@+id/l2"
+        app:layout_constraintTop_toBottomOf="@id/eTo"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Spinner
+            android:id="@+id/spCat"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/btSearch"
+            android:layout_weight="1"
+            android:text="Search"
+            android:background="@color/yellow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/l2"
+        app:layout_goneMarginTop="10dp"
+        android:text="Tong"
+        android:textSize="15dp"
+        android:id="@+id/tvTong"
+        android:textColor="@color/yellow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+    <androidx.recyclerview.widget.RecyclerView
+        app:layout_constraintTop_toBottomOf="@+id/tvTong"
+        android:layout_marginTop="10dp"
+        android:id="@+id/recycleView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
